@@ -335,8 +335,6 @@ def updatepost(request, id):
 @login_required
 def listdoctors(request):
     doctors = Doctor.objects.all()
-    appointment = Appointment.objects.filter(id=1).first()
-    print(type(appointment.start_time_of_appointment))
     return render(request, 'appointment/listdoctors.html', {'doctors': doctors})
 
 @login_required
