@@ -1,13 +1,14 @@
-{% extends 'base.html' %}
-
-{% block body %}
+{% extends 'base.html' %} {% block body %}
 <div class="container">
-    <h1>Title: {{post.title}}</h1>
-    <img src="{{post.image}}" class="img-fluid" width="50%">
-    <h2>Category: {{post.category}}</h2>
+    <h1>{{post.title}}</h1>
+    <p style="align-content: center;">
+        <img src="{{post.image}}" class="img-fluid" width="50%">
+    </p>
+    <br><br>
+    <!-- <h2>Category: {{post.category}}</h2> -->
     <h2>Summary:</h2>
-    <p>{{post.summary}}</p>
+    <p>{{post.summary|safe}}</p>
     <h2>Content:</h2>
-    <p>{{post.content}}</p>
+    <p>{{post.content|safe}}</p>
 </div>
 {% endblock body %}

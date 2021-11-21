@@ -9,8 +9,8 @@
             <div class="card">
                 <img src="{{mh.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{mh.title}}</h5>
-                    <p class="card-text">{{mh.summary|truncatewords:15}}</p>
+                    <h5 class="card-title">{{mh.title|truncatewords:7}}</h5>
+                    <p class="card-text">{{mh.summary|truncatewords:15|safe}}</p>
                 </div>
                 <a href="/showpost/{{mh.id}}" class="btn btn-primary m-2">Continue reading</a>
             </div>
@@ -25,7 +25,7 @@
             <div class="card">
                 <img src="{{mh.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{mh.title}}</h5>
+                    <h5 class="card-title">{{mh.title|truncatewords:7}}</h5>
                     <p class="card-text">{{mh.summary|truncatewords:15}}</p>
                 </div>
                 <a href="/showpost/{{mh.id}}" class="btn btn-primary m-2">Continue reading</a>
@@ -41,7 +41,7 @@
             <div class="card">
                 <img src="{{mh.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{mh.title}}</h5>
+                    <h5 class="card-title">{{mh.title|truncatewords:7}}</h5>
                     <p class="card-text">{{mh.summary|truncatewords:15}}</p>
                 </div>
                 <a href="/showpost/{{mh.id}}" class="btn btn-primary m-2">Continue reading</a>
@@ -57,7 +57,7 @@
             <div class="card">
                 <img src="{{mh.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{mh.title}}</h5>
+                    <h5 class="card-title">{{mh.title|truncatewords:7}}</h5>
                     <p class="card-text">{{mh.summary|truncatewords:15}}</p>
                 </div>
                 <a href="/showpost/{{mh.id}}" class="btn btn-primary m-2">Continue reading</a>

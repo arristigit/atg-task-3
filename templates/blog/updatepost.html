@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block body %}
+{% extends 'base.html' %} {% load static %} {% block body %}
 
 <div class="container mt-3">
     <h2>Update: {{post.title}}</h2>
@@ -11,8 +9,7 @@
             <h4>Title:</h4>
         </div>
         <div class="col-md-9">
-            <input type="text" class="form-control" name="title" value="{{post.title}}"
-                placeholder="Enter suitable title for the blog post" required>
+            <input type="text" class="form-control" name="title" value="{{post.title}}" placeholder="Enter suitable title for the blog post" required>
         </div>
         <div class="col-md-3">
             <h4>Image:</h4>
@@ -41,12 +38,9 @@
         </div>
         <!-- <div class="col-9">         -->
         <div class="col-9 form-floating">
-            <textarea class="form-control" name="summary" placeholder="summary"
-                style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Brief summary</label>
+            <textarea class="form-control" name="summary" value="{{post.summary}}"></textarea>
             <p>
-                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Previous Summary
                 </button>
             </p>
@@ -60,18 +54,16 @@
             <h4>Content:</h4>
         </div>
         <div class="col-9 form-floating">
-            <textarea class="form-control" name="content" placeholder="summary"
-                style="height: 250px"></textarea>
-            <label for="floatingTextarea2">Brief summary</label>
+            <textarea class="form-control" name="content" id="content" style="height: 250px"></textarea>
+            <label for="floatingTextarea2">Content</label>
             <p>
-                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsecontent" aria-expanded="false" aria-controls="collapseExample">
+                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapsecontent" aria-expanded="false" aria-controls="collapseExample">
                     Previous Content
                 </button>
             </p>
             <div class="collapse" id="collapsecontent">
                 <div class="card card-body">
-                    {{post.content}}
+                    {{post.content|safe}}
                 </div>
             </div>
         </div>
@@ -88,4 +80,6 @@
         </div>
     </form>
 </div>
-{% endblock body %}
+{% endblock body %} {% block script %}
+<script src="{% static 'tiny_MCE.js' %}"></script>
+{% endblock script %}
